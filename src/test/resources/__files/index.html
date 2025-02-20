@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Film Details</title>
+</head>
+<body>
+<h1 id="film-title">Loading...</h1>
+<p id="film-director">Loading...</p>
+<ul id="film-cast"></ul>
+
+<script>
+    fetch("/api/movie/1084199-companion")
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById("film-title").textContent = data.title;
+            document.getElementById("film-director").textContent = data.director;
+            const castList = document.getElementById("film-cast");
+            data.cast.forEach(member => {
+                const li = document.createElement("li");
+                li.textContent = member;
+                castList.appendChild(li);
+            });
+        })
+        .catch(err => console.error("Error fetching film data:", err));
+</script>
+</body>
+</html>
