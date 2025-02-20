@@ -30,9 +30,12 @@ This project implements various search techniques on The Movie Database (TMDb) w
 
 ## Getting Started
 
+### Prerequisites
+- **Java:** Ensure you have Java installed (JDK 17 is recommended based on the project configuration).
+- **Maven:** Install Maven 3.x or later to handle project builds and dependency management.
 
 ### Installation and running
-1. unzip the QATask.zip
+1. unzip or clone the QATask.zip
 2. run 'mvn clean install' within QATask root
 3. dependcies should be installed and all tests with @smoke tag should run
 
